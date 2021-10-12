@@ -21,7 +21,7 @@ export const vShow: ObjectDirective<VShowElement> = {
   },
   updated(el, { value, oldValue }, { transition }) {
     if (!value === !oldValue) {
-      el._vod = el.style.display === 'none' ? '' : el.style.display
+      el._vod = el.style.display === 'none' ? el._vod : el.style.display
       setDisplay(el, value);
       return;
     }
